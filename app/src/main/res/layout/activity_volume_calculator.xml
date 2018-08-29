@@ -1,0 +1,902 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.extremecalculator.activities.VolumeCalculatorActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:background="@color/appLightBlue">
+
+        <ImageButton
+            android:id="@+id/ib_screenBack"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@color/appTransparent"
+            android:paddingLeft="@dimen/margin_normal"
+            android:paddingRight="@dimen/margin_normal"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_action_previous_item" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/volumeCalculatorScreenTitle"
+            android:textColor="@color/appWhite"
+            android:textSize="@dimen/font_large" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_xSmall"
+                android:background="@drawable/gray_border_bg"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_resultTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_xSmall"
+                    android:layout_marginTop="@dimen/margin_xSmall"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:text="Result : "
+                    android:textColor="@color/appBlack"
+                    android:textSize="@dimen/font_xSmall" />
+
+                <TextView
+                    android:id="@+id/tv_volumeResult"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin_xSmall"
+                    android:layout_marginLeft="@dimen/margin_xNormal"
+                    android:layout_marginTop="@dimen/margin_xNormal"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:text="0000"
+                    android:textColor="@color/appBlack"
+                    android:textSize="@dimen/font_large"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="@dimen/margin_xSmall"
+                android:background="@color/appGray" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/appBlack" />
+
+
+            <LinearLayout
+                android:id="@+id/select_type"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="#cacaca">
+                <TextView
+                    android:id="@+id/tv_volumeType"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/gray_border_blue_bg"
+                    android:drawableLeft="@drawable/ic_action_expand"
+                    android:drawablePadding="@dimen/margin_small"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/margin_xSmall"
+                    android:singleLine="true"
+                    android:textColor="@color/appBlack"
+                    android:textSize="@dimen/font_normal" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/calculation_input"
+                android:visibility="visible"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:padding="@dimen/margin_xSmall">
+
+                <TextView
+                    android:id="@+id/tv_caculationType"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/margin_small"
+                    android:drawableLeft="@drawable/ic_action_expand"
+                    android:drawablePadding="@dimen/margin_small"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/margin_xSmall"
+                    android:singleLine="true"
+                    android:textColor="@color/appBlack"
+                    android:textSize="@dimen/font_normal" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="#cacaca"/>
+
+                <!--Volume of cube layout and values-->
+                <TableLayout
+                    android:visibility="visible"
+                    android:id="@+id/ll_cubeVolume"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:padding="@dimen/margin_xSmall">
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/appTorqueEditTextHeight"
+                        android:layout_marginTop="@dimen/margin_xNormal">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:textSize="17dp"
+                            android:textColor="#000000"
+                            android:text="Units: "/>
+                        <TextView
+                            android:id="@+id/tv_CubeunitType"
+                            android:layout_width="@dimen/appTorqueEditTextWidth"
+                            android:layout_height="40dp"
+                            android:layout_gravity="center_vertical"
+                            android:background="@drawable/gray_border_blue_bg"
+                            android:drawableLeft="@drawable/ic_action_expand"
+                            android:drawablePadding="@dimen/margin_small"
+                            android:ellipsize="end"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="@dimen/margin_xSmall"
+                            android:singleLine="true"
+                            android:textColor="@color/appBlack"
+                            android:textSize="@dimen/font_normal" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/appTorqueEditTextHeight"
+                        android:layout_marginTop="@dimen/margin_xNormal">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:textSize="17dp"
+                            android:gravity="center"
+                            android:textColor="#000000"
+                            android:text="Width: "/>
+                        <EditText
+                            android:id="@+id/edit_Cubewidth"
+                            android:layout_width="@dimen/appTorqueEditTextWidth"
+                            android:layout_height="40dp"
+                            android:background="@drawable/gray_border_gray_bg"
+                            android:digits="@string/allowDigitsForNumber"
+                            android:gravity="center_vertical"
+                            android:inputType="numberDecimal"
+                            android:paddingLeft="@dimen/margin_small"
+                            android:paddingRight="@dimen/margin_small"
+                            android:textColor="@color/appBlack"
+                            android:textSize="@dimen/font_normal"/>
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/appTorqueEditTextHeight"
+                        android:layout_marginTop="@dimen/margin_xNormal">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:textSize="17dp"
+                            android:gravity="center"
+                            android:textColor="#000000"
+                            android:text="Length: "/>
+                        <EditText
+                            android:id="@+id/edit_Cubelength"
+                            android:layout_width="@dimen/appTorqueEditTextWidth"
+                            android:layout_height="40dp"
+                            android:background="@drawable/gray_border_gray_bg"
+                            android:digits="@string/allowDigitsForNumber"
+                            android:gravity="center_vertical"
+                            android:inputType="numberDecimal"
+                            android:paddingLeft="@dimen/margin_small"
+                            android:paddingRight="@dimen/margin_small"
+                            android:textColor="@color/appBlack"
+                            android:textSize="@dimen/font_normal"/>
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/appTorqueEditTextHeight"
+                        android:layout_marginTop="@dimen/margin_xNormal">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:textSize="17dp"
+                            android:gravity="center"
+                            android:textColor="#000000"
+                            android:text="Height: "/>
+                        <EditText
+                            android:id="@+id/edit_Cubeheight"
+                            android:layout_width="@dimen/appTorqueEditTextWidth"
+                            android:layout_height="40dp"
+                            android:background="@drawable/gray_border_gray_bg"
+                            android:digits="@string/allowDigitsForNumber"
+                            android:gravity="center_vertical"
+                            android:inputType="numberDecimal"
+                            android:paddingLeft="@dimen/margin_small"
+                            android:paddingRight="@dimen/margin_small"
+                            android:textColor="@color/appBlack"
+                            android:textSize="@dimen/font_normal"/>
+                    </TableRow>
+                </TableLayout>
+
+                <!--Volume of Cone and values-->
+                <TableLayout
+                    android:visibility="gone"
+                    android:id="@+id/ll_ConeVolume"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:padding="@dimen/margin_xSmall">
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/appTorqueEditTextHeight"
+                        android:layout_marginTop="@dimen/margin_xNormal">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:textSize="17dp"
+                            android:textColor="#000000"
+                            android:text="Units: "/>
+                        <TextView
+                            android:id="@+id/tv_ConeunitType"
+                            android:layout_width="@dimen/appTorqueEditTextWidth"
+                            android:layout_height="40dp"
+                            android:layout_gravity="center_vertical"
+                            android:background="@drawable/gray_border_blue_bg"
+                            android:drawableLeft="@drawable/ic_action_expand"
+                            android:drawablePadding="@dimen/margin_small"
+                            android:ellipsize="end"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="@dimen/margin_xSmall"
+                            android:singleLine="true"
+                            android:textColor="@color/appBlack"
+                            android:textSize="@dimen/font_normal" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/appTorqueEditTextHeight"
+                        android:layout_marginTop="@dimen/margin_xNormal">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:textSize="17dp"
+                            android:gravity="center"
+                            android:textColor="#000000"
+                            android:text="Radius: "/>
+                        <EditText
+                            android:id="@+id/edit_ConeRadius"
+                            android:layout_width="@dimen/appTorqueEditTextWidth"
+                            android:layout_height="40dp"
+                            android:background="@drawable/gray_border_gray_bg"
+                            android:digits="@string/allowDigitsForNumber"
+                            android:gravity="center_vertical"
+                            android:inputType="numberDecimal"
+                            android:paddingLeft="@dimen/margin_small"
+                            android:paddingRight="@dimen/margin_small"
+                            android:textColor="@color/appBlack"
+                            android:textSize="@dimen/font_normal"/>
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/appTorqueEditTextHeight"
+                        android:layout_marginTop="@dimen/margin_xNormal">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:textSize="17dp"
+                            android:gravity="center"
+                            android:textColor="#000000"
+                            android:text="Height: "/>
+                        <EditText
+                            android:id="@+id/edit_Coneheight"
+                            android:layout_width="@dimen/appTorqueEditTextWidth"
+                            android:layout_height="40dp"
+                            android:background="@drawable/gray_border_gray_bg"
+                            android:digits="@string/allowDigitsForNumber"
+                            android:gravity="center_vertical"
+                            android:inputType="numberDecimal"
+                            android:paddingLeft="@dimen/margin_small"
+                            android:paddingRight="@dimen/margin_small"
+                            android:textColor="@color/appBlack"
+                            android:textSize="@dimen/font_normal"/>
+                    </TableRow>
+                </TableLayout>
+
+                <!--Volume of Cylinder layout and values-->
+                <TableLayout
+                    android:visibility="gone"
+                    android:id="@+id/ll_CylinderVolume"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:padding="@dimen/margin_xSmall">
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/appTorqueEditTextHeight"
+                        android:layout_marginTop="@dimen/margin_xNormal">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:textSize="17dp"
+                            android:textColor="#000000"
+                            android:text="Units: "/>
+                        <TextView
+                            android:id="@+id/tv_CylinderunitType"
+                            android:layout_width="@dimen/appTorqueEditTextWidth"
+                            android:layout_height="40dp"
+                            android:layout_gravity="center_vertical"
+                            android:background="@drawable/gray_border_blue_bg"
+                            android:drawableLeft="@drawable/ic_action_expand"
+                            android:drawablePadding="@dimen/margin_small"
+                            android:ellipsize="end"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="@dimen/margin_xSmall"
+                            android:singleLine="true"
+                            android:textColor="@color/appBlack"
+                            android:textSize="@dimen/font_normal" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/appTorqueEditTextHeight"
+                        android:layout_marginTop="@dimen/margin_xNormal">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:textSize="17dp"
+                            android:gravity="center"
+                            android:textColor="#000000"
+                            android:text="Radius: "/>
+                        <EditText
+                            android:id="@+id/edit_CylinderRadius"
+                            android:layout_width="@dimen/appTorqueEditTextWidth"
+                            android:layout_height="40dp"
+                            android:background="@drawable/gray_border_gray_bg"
+                            android:digits="@string/allowDigitsForNumber"
+                            android:gravity="center_vertical"
+                            android:inputType="numberDecimal"
+                            android:paddingLeft="@dimen/margin_small"
+                            android:paddingRight="@dimen/margin_small"
+                            android:textColor="@color/appBlack"
+                            android:textSize="@dimen/font_normal"/>
+                    </TableRow>
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/appTorqueEditTextHeight"
+                        android:layout_marginTop="@dimen/margin_xNormal">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:textSize="17dp"
+                            android:gravity="center"
+                            android:textColor="#000000"
+                            android:text="Height: "/>
+                        <EditText
+                            android:id="@+id/edit_Cylinderheight"
+                            android:layout_width="@dimen/appTorqueEditTextWidth"
+                            android:layout_height="40dp"
+                            android:background="@drawable/gray_border_gray_bg"
+                            android:digits="@string/allowDigitsForNumber"
+                            android:gravity="center_vertical"
+                            android:inputType="numberDecimal"
+                            android:paddingLeft="@dimen/margin_small"
+                            android:paddingRight="@dimen/margin_small"
+                            android:textColor="@color/appBlack"
+                            android:textSize="@dimen/font_normal"/>
+                    </TableRow>
+                </TableLayout>
+
+                <!--Volume of Square or Rectangle Room  layout and values-->
+                <TableLayout
+                    android:visibility="gone"
+                    android:id="@+id/ll_RecRoomVolume"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:padding="@dimen/margin_xSmall">
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/appTorqueEditTextHeight"
+                        android:layout_marginTop="@dimen/margin_xNormal">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:textSize="17dp"
+                            android:textColor="#000000"
+                            android:text="Units: "/>
+                        <TextView
+                            android:id="@+id/tv_RecRoomunitType"
+                            android:layout_width="@dimen/appTorqueEditTextWidth"
+                            android:layout_height="40dp"
+                            android:layout_gravity="center_vertical"
+                            android:background="@drawable/gray_border_blue_bg"
+                            android:drawableLeft="@drawable/ic_action_expand"
+                            android:drawablePadding="@dimen/margin_small"
+                            android:ellipsize="end"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="@dimen/margin_xSmall"
+                            android:singleLine="true"
+                            android:textColor="@color/appBlack"
+                            android:textSize="@dimen/font_normal" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/appTorqueEditTextHeight"
+                        android:layout_marginTop="@dimen/margin_xNormal">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:textSize="17dp"
+                            android:gravity="center"
+                            android:textColor="#000000"
+                            android:text="Width: "/>
+                        <EditText
+                            android:id="@+id/edit_RecRoomwidth"
+                            android:layout_width="@dimen/appTorqueEditTextWidth"
+                            android:layout_height="40dp"
+                            android:background="@drawable/gray_border_gray_bg"
+                            android:digits="@string/allowDigitsForNumber"
+                            android:gravity="center_vertical"
+                            android:inputType="numberDecimal"
+                            android:paddingLeft="@dimen/margin_small"
+                            android:paddingRight="@dimen/margin_small"
+                            android:textColor="@color/appBlack"
+                            android:textSize="@dimen/font_normal"/>
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/appTorqueEditTextHeight"
+                        android:layout_marginTop="@dimen/margin_xNormal">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:textSize="17dp"
+                            android:gravity="center"
+                            android:textColor="#000000"
+                            android:text="Length: "/>
+                        <EditText
+                            android:id="@+id/edit_RecRoomlength"
+                            android:layout_width="@dimen/appTorqueEditTextWidth"
+                            android:layout_height="40dp"
+                            android:background="@drawable/gray_border_gray_bg"
+                            android:digits="@string/allowDigitsForNumber"
+                            android:gravity="center_vertical"
+                            android:inputType="numberDecimal"
+                            android:paddingLeft="@dimen/margin_small"
+                            android:paddingRight="@dimen/margin_small"
+                            android:textColor="@color/appBlack"
+                            android:textSize="@dimen/font_normal"/>
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/appTorqueEditTextHeight"
+                        android:layout_marginTop="@dimen/margin_xNormal">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:textSize="17dp"
+                            android:gravity="center"
+                            android:textColor="#000000"
+                            android:text="Height: "/>
+                        <EditText
+                            android:id="@+id/edit_RecRoomheight"
+                            android:layout_width="@dimen/appTorqueEditTextWidth"
+                            android:layout_height="40dp"
+                            android:background="@drawable/gray_border_gray_bg"
+                            android:digits="@string/allowDigitsForNumber"
+                            android:gravity="center_vertical"
+                            android:inputType="numberDecimal"
+                            android:paddingLeft="@dimen/margin_small"
+                            android:paddingRight="@dimen/margin_small"
+                            android:textColor="@color/appBlack"
+                            android:textSize="@dimen/font_normal"/>
+                    </TableRow>
+                </TableLayout>
+
+                <!--Volume of Pyramid layout and values-->
+                <TableLayout
+                    android:visibility="gone"
+                    android:id="@+id/ll_PyramidVolume"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:padding="@dimen/margin_xSmall">
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/appTorqueEditTextHeight"
+                        android:layout_marginTop="@dimen/margin_xNormal">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:textSize="17dp"
+                            android:textColor="#000000"
+                            android:text="Units: "/>
+                        <TextView
+                            android:id="@+id/tv_PyramidunitType"
+                            android:layout_width="@dimen/appTorqueEditTextWidth"
+                            android:layout_height="40dp"
+                            android:layout_gravity="center_vertical"
+                            android:background="@drawable/gray_border_blue_bg"
+                            android:drawableLeft="@drawable/ic_action_expand"
+                            android:drawablePadding="@dimen/margin_small"
+                            android:ellipsize="end"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="@dimen/margin_xSmall"
+                            android:singleLine="true"
+                            android:textColor="@color/appBlack"
+                            android:textSize="@dimen/font_normal" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/appTorqueEditTextHeight"
+                        android:layout_marginTop="@dimen/margin_xNormal">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:textSize="17dp"
+                            android:gravity="center"
+                            android:textColor="#000000"
+                            android:text="Base: "/>
+                        <EditText
+                            android:id="@+id/edit_PyramidBase"
+                            android:layout_width="@dimen/appTorqueEditTextWidth"
+                            android:layout_height="40dp"
+                            android:background="@drawable/gray_border_gray_bg"
+                            android:digits="@string/allowDigitsForNumber"
+                            android:gravity="center_vertical"
+                            android:inputType="numberDecimal"
+                            android:paddingLeft="@dimen/margin_small"
+                            android:paddingRight="@dimen/margin_small"
+                            android:textColor="@color/appBlack"
+                            android:textSize="@dimen/font_normal"/>
+                    </TableRow>
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/appTorqueEditTextHeight"
+                        android:layout_marginTop="@dimen/margin_xNormal">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:textSize="17dp"
+                            android:gravity="center"
+                            android:textColor="#000000"
+                            android:text="Height: "/>
+                        <EditText
+                            android:id="@+id/edit_Pyramidheight"
+                            android:layout_width="@dimen/appTorqueEditTextWidth"
+                            android:layout_height="40dp"
+                            android:background="@drawable/gray_border_gray_bg"
+                            android:digits="@string/allowDigitsForNumber"
+                            android:gravity="center_vertical"
+                            android:inputType="numberDecimal"
+                            android:paddingLeft="@dimen/margin_small"
+                            android:paddingRight="@dimen/margin_small"
+                            android:textColor="@color/appBlack"
+                            android:textSize="@dimen/font_normal"/>
+                    </TableRow>
+                </TableLayout>
+
+                <!--Volume of Sphere layout and values-->
+                <TableLayout
+                    android:visibility="gone"
+                    android:id="@+id/ll_SphereVolume"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:padding="@dimen/margin_xSmall">
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/appTorqueEditTextHeight"
+                        android:layout_marginTop="@dimen/margin_xNormal">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:textSize="17dp"
+                            android:textColor="#000000"
+                            android:text="Units: "/>
+                        <TextView
+                            android:id="@+id/tv_SphereUnitType"
+                            android:layout_width="@dimen/appTorqueEditTextWidth"
+                            android:layout_height="40dp"
+                            android:layout_gravity="center_vertical"
+                            android:background="@drawable/gray_border_blue_bg"
+                            android:drawableLeft="@drawable/ic_action_expand"
+                            android:drawablePadding="@dimen/margin_small"
+                            android:ellipsize="end"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="@dimen/margin_xSmall"
+                            android:singleLine="true"
+                            android:textColor="@color/appBlack"
+                            android:textSize="@dimen/font_normal" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/appTorqueEditTextHeight"
+                        android:layout_marginTop="@dimen/margin_xNormal">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:textSize="17dp"
+                            android:gravity="center"
+                            android:textColor="#000000"
+                            android:text="Base: "/>
+                        <EditText
+                            android:id="@+id/edit_SphereRadius"
+                            android:layout_width="@dimen/appTorqueEditTextWidth"
+                            android:layout_height="40dp"
+                            android:background="@drawable/gray_border_gray_bg"
+                            android:digits="@string/allowDigitsForNumber"
+                            android:gravity="center_vertical"
+                            android:inputType="numberDecimal"
+                            android:paddingLeft="@dimen/margin_small"
+                            android:paddingRight="@dimen/margin_small"
+                            android:textColor="@color/appBlack"
+                            android:textSize="@dimen/font_normal"/>
+                    </TableRow>
+                </TableLayout>
+
+                <!--Volume of Ellipsoid layout and values-->
+                <TableLayout
+                    android:visibility="gone"
+                    android:id="@+id/ll_EllipsoidVolume"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:padding="@dimen/margin_xSmall">
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/appTorqueEditTextHeight"
+                        android:layout_marginTop="@dimen/margin_xNormal">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:textSize="17dp"
+                            android:textColor="#000000"
+                            android:text="Units: "/>
+                        <TextView
+                            android:id="@+id/tv_EllipsoidUnitType"
+                            android:layout_width="@dimen/appTorqueEditTextWidth"
+                            android:layout_height="40dp"
+                            android:layout_gravity="center_vertical"
+                            android:background="@drawable/gray_border_blue_bg"
+                            android:drawableLeft="@drawable/ic_action_expand"
+                            android:drawablePadding="@dimen/margin_small"
+                            android:ellipsize="end"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="@dimen/margin_xSmall"
+                            android:singleLine="true"
+                            android:textColor="@color/appBlack"
+                            android:textSize="@dimen/font_normal" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/appTorqueEditTextHeight"
+                        android:layout_marginTop="@dimen/margin_xNormal">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:textSize="17dp"
+                            android:gravity="center"
+                            android:textColor="#000000"
+                            android:text="Radius R1: "/>
+                        <EditText
+                            android:id="@+id/edit_EllipsoidR1"
+                            android:layout_width="@dimen/appTorqueEditTextWidth"
+                            android:layout_height="40dp"
+                            android:background="@drawable/gray_border_gray_bg"
+                            android:digits="@string/allowDigitsForNumber"
+                            android:gravity="center_vertical"
+                            android:inputType="numberDecimal"
+                            android:paddingLeft="@dimen/margin_small"
+                            android:paddingRight="@dimen/margin_small"
+                            android:textColor="@color/appBlack"
+                            android:textSize="@dimen/font_normal"/>
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/appTorqueEditTextHeight"
+                        android:layout_marginTop="@dimen/margin_xNormal">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:textSize="17dp"
+                            android:gravity="center"
+                            android:textColor="#000000"
+                            android:text="Radius R2: "/>
+                        <EditText
+                            android:id="@+id/edit_EllipsoidR2"
+                            android:layout_width="@dimen/appTorqueEditTextWidth"
+                            android:layout_height="40dp"
+                            android:background="@drawable/gray_border_gray_bg"
+                            android:digits="@string/allowDigitsForNumber"
+                            android:gravity="center_vertical"
+                            android:inputType="numberDecimal"
+                            android:paddingLeft="@dimen/margin_small"
+                            android:paddingRight="@dimen/margin_small"
+                            android:textColor="@color/appBlack"
+                            android:textSize="@dimen/font_normal"/>
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/appTorqueEditTextHeight"
+                        android:layout_marginTop="@dimen/margin_xNormal">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:textSize="17dp"
+                            android:gravity="center"
+                            android:textColor="#000000"
+                            android:text="Radius R3: "/>
+                        <EditText
+                            android:id="@+id/edit_EllipsoidR3"
+                            android:layout_width="@dimen/appTorqueEditTextWidth"
+                            android:layout_height="40dp"
+                            android:background="@drawable/gray_border_gray_bg"
+                            android:digits="@string/allowDigitsForNumber"
+                            android:gravity="center_vertical"
+                            android:inputType="numberDecimal"
+                            android:paddingLeft="@dimen/margin_small"
+                            android:paddingRight="@dimen/margin_small"
+                            android:textColor="@color/appBlack"
+                            android:textSize="@dimen/font_normal"/>
+                    </TableRow>
+                </TableLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:visibility="gone"
+                android:id="@+id/conversion_input"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:padding="@dimen/margin_xSmall">
+
+                <LinearLayout
+                    android:layout_marginTop="3dp"
+                    android:layout_marginRight="2dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/tv_conversionType"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/margin_small"
+                        android:drawableLeft="@drawable/ic_action_expand"
+                        android:drawablePadding="@dimen/margin_small"
+                        android:ellipsize="end"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="@dimen/margin_xSmall"
+                        android:singleLine="true"
+                        android:textColor="@color/appBlack"
+                        android:textSize="@dimen/font_normal" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="#cacaca"/>
+
+                <LinearLayout
+                    android:padding="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:textSize="17dp"
+                        android:textColor="#000000"
+                        android:text="Enter Value: "/>
+                    <EditText
+                        android:id="@+id/edit_Conversionvalue"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:background="@drawable/gray_border_gray_bg"
+                        android:digits="@string/allowDigitsForNumber"
+                        android:gravity="center_vertical"
+                        android:inputType="numberDecimal"
+                        android:paddingLeft="@dimen/margin_small"
+                        android:paddingRight="@dimen/margin_small"
+                        android:textColor="@color/appBlack"
+                        android:textSize="@dimen/font_normal"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/appGray" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_calculate"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:padding="@dimen/margin_normal"
+                    android:text="@string/calculateButtonLabel"
+                    android:textColor="@color/appLightBlue"
+                    android:textSize="@dimen/font_normal" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="fill_parent"
+                    android:layout_marginTop="@dimen/margin_xSmall"
+                    android:background="@color/appGray" />
+
+                <TextView
+                    android:id="@+id/tv_clear"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:padding="@dimen/margin_normal"
+                    android:text="@string/ClearButtonLabel"
+                    android:textColor="@color/appLightBlue"
+                    android:textSize="@dimen/font_normal" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

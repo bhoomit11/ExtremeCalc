@@ -1,0 +1,285 @@
+<resources>
+    <string name="app_name">Extreme Calculator</string>
+
+    <string name="allowDigitsForNumber">0123456789.</string>
+    <string name="calculateButtonLabel">Calculate</string>
+    <string name="ClearButtonLabel">Clear</string>
+    <!--Welcome Screen Texts-->
+
+    <string name="scientificCalculatorButtonLabel">Scientific\nCalculator</string>
+    <string name="volumeCalculatorButtonLabel">Volume\nCalculator</string>
+    <string name="torqueCalculatorButtonLabel">Torque\nCalculator</string>
+    <string name="areaCalculatorButtonLabel">Area\nCalculator</string>
+    <string name="speedDistanceTimeCalculatorButtonLabel">Speed Distance and Time\nCalculator</string>
+
+    <!--Torque Calculator Screen Text-->
+
+    <string name="torqueCalculatorScreenTitle">Torque Calculator</string>
+
+    <string name="torqueRadioLabel">Torque</string>
+    <string name="forceRadioLabel">Force</string>
+    <string name="distanceRadioLabel">Distance</string>
+
+    <string name="torqueTextLabel">Torque : </string>
+    <string name="forceTextLabel">Force : </string>
+    <string name="distanceTextLabel">Distance : </string>
+
+    <string-array name="torqueScaleTypes">
+        <item>Newton-Meter</item>
+        <item>Dyne-Centimeter</item>
+        <item>Gram-Centimeter</item>
+        <item>Kilogram-Centimeter</item>
+        <item>Kilogram-Meter</item>
+        <item>Newton-Centimeter</item>
+        <item>Pound-Foot</item>
+        <item>Pound-Inch</item>
+    </string-array>
+
+    <string-array name="forceScaleTypes">
+        <item>Newton</item>
+        <item>Dyne</item>
+        <item>Gram Force</item>
+        <item>Kgs-Meter/sec^2</item>
+        <item>Kip</item>
+        <item>Pound Force</item>
+        <item>Poundal</item>
+    </string-array>
+
+    <string-array name="distanceScaleTypes">
+        <item>Meter</item>
+        <item>Centimeter</item>
+        <!--<item>Attometer</item>-->
+        <item>Dekameter</item>
+        <item>Decimeter</item>
+        <!--<item>Exameter</item>-->
+        <!--<item>Femtometer</item>-->
+        <item>Foot</item>
+        <item>Hectometer</item>
+        <item>Inch</item>
+        <item>Kilometer</item>
+        <!--<item>Megameter</item>-->
+        <item>Micrometer</item>
+        <item>Mile</item>
+        <item>Millimeter</item>
+        <item>Nanometer</item>
+        <!--<item>Petameter</item>-->
+        <!--<item>Picometer</item>-->
+        <item>Yard</item>
+    </string-array>
+
+    <!--Volume Calculator Screen Texts-->
+    <string name="volumeCalculatorScreenTitle">Volume Calculator</string>
+
+    <!--Area Calculator Screen Texts-->
+
+    <string name="areaCalculatorScreenTitle">Area Calculator</string>
+
+    <string-array name="areaTypes">
+        <item>Rectangle</item>
+        <item>Triangle</item>
+        <item>Trapezoid</item>
+        <item>Circle</item>
+        <item>Ellipse</item>
+        <item>Parallelogram</item>
+    </string-array>
+    
+    <string-array name="areaCalculatorScale">
+        <item>Foot</item>
+        <item>Yard</item>
+        <item>Inch</item>
+        <item>Mile</item>
+        <item>Meter</item>
+        <item>Kilometer</item>
+        <item>Centimeter</item>
+    </string-array>
+
+    <string name="lengthLabel">Length : </string>
+    <string name="edgeLabel">Edge : </string>
+
+    <string name="edge1Label">Edge 1 : </string>
+    <string name="edge2Label">Edge 2 : </string>
+    <string name="edge3Label">Edge 3 : </string>
+
+    <string name="topEdgeLabel">Top Edge : </string>
+    <string name="bottomEdgeLabel">Bottom Edge : </string>
+    <string name="heightLabel">Height : </string>
+
+    <string name="radiusLabel">Radius : </string>
+
+    <string name="majorAxesLabel">Major Axes : </string>
+    <string name="minorAxesLabel">Minor Axes : </string>
+
+    <string name="baseLabel">Base : </string>
+
+    <!--Scientific Calculator Screen Text-->
+
+    <string name="scientificCalculatorScreenTitle">Scientific Calculator</string>
+
+
+
+    <!--Volume Calculator Screen Texts-->
+    <string-array name="VolumeType">
+        <item>Volumn Calculation</item>
+        <item>Volume Conversion</item>
+    </string-array>
+
+    <string-array name="calculationType">
+        <item>Calculate Volume Of a Cube</item>
+        <item>Calculate Volume Of a Cone</item>
+        <item>Calculate Volume Of a Cylinder</item>
+        <item>Calculate Volume Of a Square or Rectangle Room</item>
+        <item>Calculate Volume Of a Pyramid</item>
+        <item>Calculate Volume Of a Sphere</item>
+        <item>Calculate Volume Of a Ellipsoid</item>
+    </string-array>
+
+    <string-array name="unitType">
+        <item>Inches</item>
+        <item>metres</item>
+        <item>Centimetres</item>
+        <item>Millimetres</item>
+        <item>Yards</item>
+        <item>Feet</item>
+    </string-array>
+
+    <string-array name="conversionType">
+        <item>Cubic Inches to Cubic Feet</item>
+        <item>Cubic Feet to Cubic Inches</item>
+        <item>Cubic Inches to Quarts</item>
+        <item>Quarts to Cubic Inches</item>
+        <item>Cubic Feet to Cubic Yards</item>
+        <item>Cubic Yards to Cubic Feet</item>
+        <item>Cubic metres to Gallon</item>
+        <item>Gallon to Cubic metres</item>
+        <item>Gallon to Cubic Feet</item>
+        <item>Cubic Feet to Gallon</item>
+        <item>Liters to Cubic Feet</item>
+        <item>Cubic Feet to Liters</item>
+        <item>Cubic Inches to Liters</item>
+        <item>Liters to Cubic Inches</item>
+        <item>Liters to Cubic metres</item>
+        <item>Cubic metres to Liters</item>
+        <item>Gallons to Liters</item>
+        <item>Liters to Gallons</item>
+        <item>Quarts to Liters</item>
+        <item>Liters to Quarts</item>
+        <item>PPM to GPG</item>
+        <item>GPG to PPM</item>
+    </string-array>
+
+    <!--Speed Time Distance Calculator Screen Texts-->
+
+    <string name="speedTextLabel">Speed: </string>
+    <string name="timeTextLabel">Time: </string>
+
+    <string-array name="distanceUnit">
+        <item>Metres</item>
+        <item>Millimetres</item>
+        <item>Centimetres</item>
+        <item>Kilometres</item>
+        <item>Inches</item>
+        <item>Feet</item>
+        <item>Yards</item>
+        <item>Fathoms</item>
+        <item>Statute Miles</item>
+        <item>Nautical Miles</item>
+        <item>Light Second</item>
+        <item>Light Minute</item>
+        <item>Light Hour</item>
+        <item>Light Year</item>
+        <item>Par Sec</item>
+        <item>Astronomical Unit</item>
+    </string-array>
+
+    <string-array name="speedUnits">
+        <item>Metres per Second</item>
+        <item>Metres per Minute</item>
+        <item>Kilometre per Hour</item>
+        <item>Feet per Second</item>
+        <item>Feet per Minute</item>
+        <item>Yard per Minute</item>
+        <item>Statute Mile per Hour</item>
+        <item>Knot</item>
+        <item>Speed of Light</item>
+    </string-array>
+
+    <string-array name="timeUnits">
+        <item>Hours</item>
+        <item>Minutes</item>
+        <item>Seconds</item>
+    </string-array>
+
+    <string-array name="SDTcalculationType">
+        <item>Calculate Time</item>
+        <item>Calculate Distance</item>
+        <item>Calculate Speed</item>
+    </string-array>
+
+    <string name="Metres_per_Second">1</string>
+    <string name="Metres_per_Minute">0.01666666666666666666666666</string>
+    <string name="Kilometre_per_Hour">0.277777777777777777777777777777777777</string>
+    <string name="Feet_per_Second">0.3048</string>
+    <string name="Feet_per_Minute">0.00508</string>
+    <string name="Yard_per_Minute">0.01524</string>
+    <string name="Statute_Mile_per_Hour">0.44704</string>
+    <string name="Knot">0.514444444444</string>
+    <string name="Speed_of_Light">299792458</string>
+
+    <string name="Metres">1</string>
+    <string name="Millimetres">0.001</string>
+    <string name="Centimetres">0.01</string>
+    <string name="Kilometres">1000</string>
+    <string name="Inches">0.0254</string>
+    <string name="Feet">0.3048</string>
+    <string name="Yards">0.9144</string>
+    <string name="Fathoms">1.8288</string>
+    <string name="Statute_Miles">1609.344</string>
+    <string name="Nautical_Miles">1852</string>
+    <string name="Light_Second">299792458</string>
+    <string name="Light_Minute">17987547480</string>
+    <string name="Light_Hour">1079252848800</string>
+    <string name="Light_Year">9460895208540000</string>
+    <string name="ParSec">30842518379800000</string>
+    <string name="Astronomical_Unit">149597870000</string>
+
+    <!--Scientific Calculator Screen Texts-->
+    <string-array name="canstants">
+        <item>Absolute Zero\n-273.16 °C</item>
+        <item>Acceleration of free fall(Standard)\n9.80665 m/s^2</item>
+        <item>Avogadro Constant\n6.0221367×(10^23)1/mol</item>
+        <item>Base of Natural Logarithms\n2.718281828</item>
+        <item>Bohr Magneton\n9.2740154×(10^-24)J/T</item>
+        <item>Bohr Radius\n5.29177249×(10^-11) m</item>
+        <item>Boltzmann Constant\n1.380658×(10^-23) J/K</item>
+        <item>Electron Radius\n2.81794092×(10^-15) m</item>
+        <item>Dirac\'s Constant\n1.0545887×(10^-34) Js</item>
+        <item>Elementary Charge\n1.60217733×(10^-19) C</item>
+        <item>Electron Mass\n9.1093897×(10^-31) kg</item>
+        <item>Electron-Proton Mass Ratio\n5.44617013×(10^-4)</item>
+        <item>Electronvolt\n1.6021892× (10^-19)J</item>
+        <item>Faraday Constant\n96485.309 C/mol</item>
+        <item>Feigenbaum\'s Constant\n4.669210609102990</item>
+        <item>Fine Structure Constant\n7.29735308×(10^-3)</item>
+        <item>First Radiation Constant\n3.7417749×(10^-16)W m2</item>
+        <item>Newtonian Constant of Gravitation\n6.67259×(10^-11) N m2/kg2</item>
+        <item>Hydrogen Rydberg Number\n1.0967758×(10^7) 1/m</item>
+        <item>Josephson Frequency Voltage Quotient\n4.8359767×(10^14)Hz/V</item>
+        <item>Loschmidt Constant\n2.686763×(10^25) 1/m3</item>
+        <item>Magnetic Flux Quantum\n2.06783461×(10^-15) Wb</item>
+        <item>Molar Gas Constant\n8.314510 J/mol K</item>
+        <item>Molar Planck Constant\n3.99031323×(10^-10) J s/mol</item>
+        <item>Molar Volume\n0.02241410 m3/mol</item>
+        <item>Standard Pressure\n101325 Pa</item>
+        <item>Nuclear Magneton\n5.0507866×(10^-27) J/T</item>
+        <item>Permeability of Vacuum\n12.566370614×(10^-7)N /A2</item>
+        <item>Permeability of Vacuum\n8.854187817×(10^-12 )F/m</item>
+        <item>PI\n3.14159265</item>
+        <item>Planck Constant\n6.6260755×(10^-34) Js</item>
+        <item>Rydberg Constant\n10973731.534 1/m</item>
+        <item>Second Radiation Constant\n0.01438769 m K</item>
+        <item>Solar Constant\n1400 W/m2</item>
+        <item>Speed of Light in Vacuum\n299792458 m/s</item>
+        <item>Speed of Sound in Air at STP\n340 m/s</item>
+        <item>Stefan Boltzmann Constant\n5.67051×(10^-8) W/m2K4</item>
+    </string-array>
+</resources>

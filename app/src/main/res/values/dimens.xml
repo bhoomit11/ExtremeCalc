@@ -1,0 +1,56 @@
+<resources>
+
+
+    <!-- DP - Calculation
+
+        xhdpi: 2.0
+        hdpi: 1.5
+        mdpi: 1.0 (baseline)
+        ldpi: 0.75  -->
+
+    <dimen name="button_height_xLarge">68dp</dimen>
+    <dimen name="button_height_large">60dp</dimen>
+    <dimen name="button_height_normal">52dp</dimen>
+    <dimen name="button_height_small">46dp</dimen>
+    <dimen name="button_height_xSmall">40dp</dimen>
+    <dimen name="button_height_xxSmall">32dp</dimen>
+    <dimen name="crop_window_button_height">55dp</dimen>
+
+    <dimen name="view_border">1dp</dimen>
+
+    <!-- Font Size -->
+    <dimen name="font_xxSmall">10sp</dimen>
+    <dimen name="font_xSmall">12sp</dimen>
+    <dimen name="font_small">14sp</dimen>
+    <dimen name="font_normal">16sp</dimen>
+    <dimen name="font_large">18sp</dimen>
+    <dimen name="font_xLarge">20sp</dimen>
+    <dimen name="font_xxLarge">22sp</dimen>
+    <dimen name="font_xxxLarge">24sp</dimen>
+
+    <!--Margin -->
+    <dimen name="margin_xxSmall">2dp</dimen>
+    <dimen name="margin_xSmall">4dp</dimen>
+    <dimen name="margin_small">8dp</dimen>
+    <dimen name="margin_xNormal">12dp</dimen>
+    <dimen name="margin_normal">16dp</dimen>
+    <dimen name="margin_large">24dp</dimen>
+    <dimen name="margin_xLarge">32dp</dimen>
+    <dimen name="margin_xxLarge">48dp</dimen>
+    <dimen name="margin_xxxLarge">64dp</dimen>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <dimen name="appTorqueEditTextWidth">140dp</dimen>
+    <dimen name="appTorqueEditTextHeight">40dp</dimen>
+
+    <dimen name="appTimeEditTextWidth">50dp</dimen>
+    <dimen name="appTimeEditTextHeight">40dp</dimen>
+
+    <dimen name="SDTEditTextWidth">110dp</dimen>
+    <dimen name="SDTEditTextHeight">40dp</dimen>
+    <dimen name="SDTTextWidth">210dp</dimen>
+    <dimen name="SDTTextHeight">40dp</dimen>
+
+</resources>

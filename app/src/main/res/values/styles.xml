@@ -1,0 +1,41 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:colorBackground">@color/appWhite</item>
+        <item name="android:textColor">@color/appBlack</item>
+    </style>
+
+    <style name="AppFullScreenTheme" parent="@style/Theme.AppCompat.NoActionBar">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:colorBackground">@color/appWhite</item>
+        <item name="android:textColor">@color/appBlack</item>
+        <item name="android:screenOrientation">portrait</item>
+    </style>
+
+    <style name="AppFullScreenWithStatusBarTheme" parent="AppTheme">
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:screenOrientation">portrait</item>
+    </style>
+
+    <style name="MyTextViewStyle" parent="@android:style/TextAppearance.Widget.TextView">
+        <item name="android:background">@drawable/app_button_selector</item>
+        <item name="android:textColor">@color/app_button_text_selector</item>
+    </style>
+
+    <!--Alert Dialog Theme-->
+
+    <style name="MyAlertDialogStyle" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <!-- Used for the buttons -->
+        <item name="colorAccent">@color/appWhite</item>
+        <!-- Used for the title and text -->
+        <item name="android:textColorPrimary">@color/appBlack</item>
+        <!-- Used for the background -->
+        <item name="android:background">@color/appWhite</item>
+    </style>
+</resources>

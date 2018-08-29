@@ -1,0 +1,567 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.extremecalculator.activities.ScientificCalculatorActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:background="@color/appLightBlue">
+
+        <ImageButton
+            android:id="@+id/ib_screenBack"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@color/appTransparent"
+            android:paddingLeft="@dimen/margin_normal"
+            android:paddingRight="@dimen/margin_normal"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_action_previous_item" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/scientificCalculatorScreenTitle"
+            android:textColor="@color/appWhite"
+            android:textSize="@dimen/font_large" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_xSmall"
+                android:background="@drawable/gray_border_bg"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_resultTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_xSmall"
+                    android:layout_marginTop="@dimen/margin_xSmall"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:text="Result : "
+                    android:textColor="@color/appBlack"
+                    android:textSize="@dimen/font_xSmall" />
+
+                <TextView
+                    android:id="@+id/tv_areaCalculatorResult"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin_xSmall"
+                    android:layout_marginLeft="@dimen/margin_xNormal"
+                    android:layout_marginTop="@dimen/margin_xNormal"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:text="0"
+                    android:textColor="@color/appBlack"
+                    android:textSize="@dimen/font_large"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_xSmall"
+                android:layout_marginRight="@dimen/margin_xSmall"
+                android:layout_marginBottom="@dimen/margin_xSmall"
+                android:background="@drawable/gray_border_bg"
+                android:gravity="center_vertical|right"
+                android:orientation="horizontal"
+                android:padding="@dimen/margin_xSmall">
+
+                <TextView
+                    android:id="@+id/tv_btnClear"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/appGray"
+                    android:padding="@dimen/margin_small"
+                    android:text="Clear"
+                    android:textColor="@color/appBlack"
+                    android:textSize="@dimen/font_normal" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"></LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_scSqrt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/scientific_button_selector"
+                        android:gravity="center"
+                        android:text="sqrt"
+                        android:textColor="@color/app_button_text_selector"
+                        android:textSize="@dimen/font_small" />
+
+                    <TextView
+                        android:id="@+id/tv_scRoot"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/scientific_button_selector"
+                        android:gravity="center"
+                        android:text="root"
+                        android:textColor="@color/app_button_text_selector"
+                        android:textSize="@dimen/font_small" />
+
+                    <TextView
+                        android:id="@+id/tv_scIn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/scientific_button_selector"
+                        android:gravity="center"
+                        android:text="in"
+                        android:textColor="@color/app_button_text_selector"
+                        android:textSize="@dimen/font_small" />
+
+                    <TextView
+                        android:id="@+id/tv_scLog"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/scientific_button_selector"
+                        android:gravity="center"
+                        android:text="log"
+                        android:textColor="@color/app_button_text_selector"
+                        android:textSize="@dimen/font_small" />
+
+                    <TextView
+                        android:id="@+id/tv_scTan"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/scientific_button_selector"
+                        android:gravity="center"
+                        android:text="tan"
+                        android:textColor="@color/app_button_text_selector"
+                        android:textSize="@dimen/font_small" />
+
+                    <TextView
+                        android:id="@+id/tv_scaTan"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/scientific_button_selector"
+                        android:gravity="center"
+                        android:text="atan"
+                        android:textColor="@color/app_button_text_selector"
+                        android:textSize="@dimen/font_small" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_scXRestToTwo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/scientific_button_selector"
+                        android:gravity="center"
+                        android:text="x^2"
+                        android:textColor="@color/app_button_text_selector"
+                        android:textSize="@dimen/font_small" />
+
+                    <TextView
+                        android:id="@+id/tv_scXRestToY"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/scientific_button_selector"
+                        android:gravity="center"
+                        android:text="x^y"
+                        android:textColor="@color/app_button_text_selector"
+                        android:textSize="@dimen/font_small" />
+
+                    <TextView
+                        android:id="@+id/tv_eRestToX"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/scientific_button_selector"
+                        android:gravity="center"
+                        android:text="e^x"
+                        android:textColor="@color/app_button_text_selector"
+                        android:textSize="@dimen/font_small" />
+
+                    <TextView
+                        android:id="@+id/tv_scTenRestToX"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/scientific_button_selector"
+                        android:gravity="center"
+                        android:text="10^x"
+                        android:textColor="@color/app_button_text_selector"
+                        android:textSize="@dimen/font_small" />
+
+                    <TextView
+                        android:id="@+id/tv_scCos"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/scientific_button_selector"
+                        android:gravity="center"
+                        android:text="cos"
+                        android:textColor="@color/app_button_text_selector"
+                        android:textSize="@dimen/font_small" />
+
+                    <TextView
+                        android:id="@+id/tv_scaCos"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/scientific_button_selector"
+                        android:gravity="center"
+                        android:text="acos"
+                        android:textColor="@color/app_button_text_selector"
+                        android:textSize="@dimen/font_small" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_scPlusOrMinus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/scientific_button_selector"
+                        android:gravity="center"
+                        android:text="+/-"
+                        android:textColor="@color/app_button_text_selector"
+                        android:textSize="@dimen/font_small" />
+
+                    <TextView
+                        android:id="@+id/tv_scOneOfX"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/scientific_button_selector"
+                        android:gravity="center"
+                        android:text="1/x"
+                        android:textColor="@color/app_button_text_selector"
+                        android:textSize="@dimen/font_small" />
+
+                    <TextView
+                        android:id="@+id/tv_scXFactorial"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/scientific_button_selector"
+                        android:gravity="center"
+                        android:text="x!"
+                        android:textColor="@color/app_button_text_selector"
+                        android:textSize="@dimen/font_small" />
+
+                    <TextView
+                        android:id="@+id/tv_scPercentage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/scientific_button_selector"
+                        android:gravity="center"
+                        android:text="%"
+                        android:textColor="@color/app_button_text_selector"
+                        android:textSize="@dimen/font_small" />
+
+                    <TextView
+                        android:id="@+id/tv_scSin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/scientific_button_selector"
+                        android:gravity="center"
+                        android:text="sin"
+                        android:textColor="@color/app_button_text_selector"
+                        android:textSize="@dimen/font_small" />
+
+                    <TextView
+                        android:id="@+id/tv_scaSin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/scientific_button_selector"
+                        android:gravity="center"
+                        android:text="asin"
+                        android:textColor="@color/app_button_text_selector"
+                        android:textSize="@dimen/font_small" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_margin="@dimen/margin_xSmall"
+                    android:background="@color/appGray" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_scNumberSeven"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/scientific_button_selector"
+                        android:gravity="center"
+                        android:text="7"
+                        android:textColor="@color/app_button_text_selector"
+                        android:textSize="@dimen/font_small" />
+
+                    <TextView
+                        android:id="@+id/tv_scNumberEight"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/scientific_button_selector"
+                        android:gravity="center"
+                        android:text="8"
+                        android:textColor="@color/app_button_text_selector"
+                        android:textSize="@dimen/font_small" />
+
+                    <TextView
+                        android:id="@+id/tv_scNumberNine"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/scientific_button_selector"
+                        android:gravity="center"
+                        android:text="9"
+                        android:textColor="@color/app_button_text_selector"
+                        android:textSize="@dimen/font_small" />
+
+                    <TextView
+                        android:id="@+id/tv_scSignDivision"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/scientific_button_selector"
+                        android:gravity="center"
+                        android:text="/"
+                        android:textColor="@color/app_button_text_selector"
+                        android:textSize="@dimen/font_small" />
+
+                    <TextView
+                        android:id="@+id/tv_scMR"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/scientific_button_selector"
+                        android:gravity="center"
+                        android:text="MR"
+                        android:textColor="@color/app_button_text_selector"
+                        android:textSize="@dimen/font_small" />
+
+                    <TextView
+                        android:id="@+id/tv_scaMS"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/scientific_button_selector"
+                        android:gravity="center"
+                        android:text="MS"
+                        android:textColor="@color/app_button_text_selector"
+                        android:textSize="@dimen/font_small" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_scNumberFour"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/scientific_button_selector"
+                        android:gravity="center"
+                        android:text="4"
+                        android:textColor="@color/app_button_text_selector"
+                        android:textSize="@dimen/font_small" />
+
+                    <TextView
+                        android:id="@+id/tv_scNumberFive"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/scientific_button_selector"
+                        android:gravity="center"
+                        android:text="5"
+                        android:textColor="@color/app_button_text_selector"
+                        android:textSize="@dimen/font_small" />
+
+                    <TextView
+                        android:id="@+id/tv_scNumberSix"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/scientific_button_selector"
+                        android:gravity="center"
+                        android:text="6"
+                        android:textColor="@color/app_button_text_selector"
+                        android:textSize="@dimen/font_small" />
+
+                    <TextView
+                        android:id="@+id/tv_scSignMultiplication"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/scientific_button_selector"
+                        android:gravity="center"
+                        android:text="*"
+                        android:textColor="@color/app_button_text_selector"
+                        android:textSize="@dimen/font_small" />
+
+                    <TextView
+                        android:id="@+id/tv_scConstant"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/scientific_button_selector"
+                        android:gravity="center"
+                        android:text="Constant"
+                        android:textColor="@color/app_button_text_selector"
+                        android:textSize="@dimen/font_small" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_scNumberOne"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/scientific_button_selector"
+                        android:gravity="center"
+                        android:text="1"
+                        android:textColor="@color/app_button_text_selector"
+                        android:textSize="@dimen/font_small" />
+
+                    <TextView
+                        android:id="@+id/tv_scNumberTwo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/scientific_button_selector"
+                        android:gravity="center"
+                        android:text="2"
+                        android:textColor="@color/app_button_text_selector"
+                        android:textSize="@dimen/font_small" />
+
+                    <TextView
+                        android:id="@+id/tv_scNumberThree"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/scientific_button_selector"
+                        android:gravity="center"
+                        android:text="3"
+                        android:textColor="@color/app_button_text_selector"
+                        android:textSize="@dimen/font_small" />
+
+                    <TextView
+                        android:id="@+id/tv_scSignMinus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/scientific_button_selector"
+                        android:gravity="center"
+                        android:text="-"
+                        android:textColor="@color/app_button_text_selector"
+                        android:textSize="@dimen/font_small" />
+
+                    <TextView
+                        android:id="@+id/tv_scStartingBrace"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/scientific_button_selector"
+                        android:gravity="center"
+                        android:text="("
+                        android:textColor="@color/app_button_text_selector"
+                        android:textSize="@dimen/font_small" />
+
+                    <TextView
+                        android:id="@+id/tv_scEndingBraces"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/scientific_button_selector"
+                        android:gravity="center"
+                        android:text=")"
+                        android:textColor="@color/app_button_text_selector"
+                        android:textSize="@dimen/font_small" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_scNumberZero"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/scientific_button_selector"
+                        android:gravity="center"
+                        android:text="0"
+                        android:textColor="@color/app_button_text_selector"
+                        android:textSize="@dimen/font_small" />
+
+                    <TextView
+                        android:id="@+id/tv_scDecimalPoint"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/scientific_button_selector"
+                        android:gravity="center"
+                        android:text="."
+                        android:textColor="@color/app_button_text_selector"
+                        android:textSize="@dimen/font_small" />
+
+                    <TextView
+                        android:id="@+id/tv_scE"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/scientific_button_selector"
+                        android:gravity="center"
+                        android:text="E"
+                        android:textColor="@color/app_button_text_selector"
+                        android:textSize="@dimen/font_small" />
+
+                    <TextView
+                        android:id="@+id/tv_scSignAddition"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/scientific_button_selector"
+                        android:gravity="center"
+                        android:text="+"
+                        android:textColor="@color/app_button_text_selector"
+                        android:textSize="@dimen/font_small" />
+
+                    <TextView
+                        android:id="@+id/tv_scSignEqualTO"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/scientific_button_selector"
+                        android:gravity="center"
+                        android:text="="
+                        android:textColor="@color/app_button_text_selector"
+                        android:textSize="@dimen/font_small" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
